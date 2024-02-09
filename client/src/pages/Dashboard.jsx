@@ -34,10 +34,9 @@ const Dashboard = () => {
                 url,
                 userId: user.id,
             });
-            // console.log(data.error);
 
             if (!id) {
-                toast.error(id.toString());
+                toast.error('Error in id');
             } else {
                 toast.success(`Created Successfully`);
                 setUrl('');
@@ -73,9 +72,6 @@ const Dashboard = () => {
     };
 
     useEffect(() => {
-        // if (user.isLoggenIn == false || user.name == '') {
-        //     navigate('/');
-        // }
         const fetchLinks = async () => {
             try {
                 const { id } = await user;
