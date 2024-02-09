@@ -9,6 +9,16 @@ const cookieParser = require('cookie-parser');
 
 const app = express();
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
+    next();
+});
+
 mongoose
     .connect(process.env.MONGO_URL)
     .then(() => console.log('Database Connected'))
