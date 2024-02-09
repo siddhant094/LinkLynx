@@ -74,7 +74,8 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchLinks = async () => {
             try {
-                const { id } = await user;
+                console.log(user);
+                const { id } = user;
                 const responseData = await axios.post('/info', {
                     id,
                 });
