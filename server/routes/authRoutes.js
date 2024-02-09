@@ -10,12 +10,12 @@ const {
 
 const authRouter = express.Router();
 
-authRouter.use(
-    cors({
-        credentials: true,
-        origin: process.env.ORIGIN,
-    })
-);
+// authRouter.use(
+//     cors({
+//         credentials: true,
+//         origin: process.env.ORIGIN,
+//     })
+// );
 
 authRouter.get('/', test);
 authRouter.post('/register', registerUser);
