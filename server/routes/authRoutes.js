@@ -13,7 +13,7 @@ const authRouter = express.Router();
 authRouter.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:5173',
+        origin: process.env.ORIGIN,
     })
 );
 
