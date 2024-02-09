@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const { hashPassword, comparePassword } = require('../helpers/auth');
 
 const test = (req, res) => {
-    res.json(req.body);
+    res.json('Hello');
 };
 
 const loginUser = async (req, res) => {
