@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useState, useEffect } from 'react';
-import { UserContext } from '../context/userContext';
+import { UserContext } from '../../context/userContext';
 
 const Login = () => {
     const { user, setUser } = useContext(UserContext);
