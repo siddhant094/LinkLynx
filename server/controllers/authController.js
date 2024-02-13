@@ -69,7 +69,7 @@ const getProfile = async (req, res) => {
             res.json(user);
         });
     } else {
-        res.json('error in profile route');
+        res.json({ msg: 'error in profile route', token: token });
     }
 };
 
