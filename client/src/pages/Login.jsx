@@ -26,6 +26,8 @@ const Login = () => {
                     await axios.get('/profile').then(({ data }) => {
                         setUser(data);
                     });
+                } else {
+                    console.log({ user: user });
                 }
                 navigate('/dashboard');
             }
