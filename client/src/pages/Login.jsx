@@ -16,20 +16,23 @@ const Login = () => {
                 email,
                 password,
             });
-            console.log(data.error);
+            console.log(data);
 
             if (data.error) {
                 toast.error(data.error);
             } else {
                 // setUser(data);
-                if (!user) {
-                    await axios.get('/profile').then(({ data }) => {
-                        setUser(data);
-                    });
-                }
+                // if (!user) {
+                //     console.log('INSIDE !user');
+                //     await axios.get('/profile').then(({ data }) => {
+                //         setUser(data);
+                //     });
+                // }
                 navigate('/dashboard');
             }
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
         // axios.get('/');
     };
 

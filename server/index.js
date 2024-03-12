@@ -45,4 +45,8 @@ app.get('/id/:shortId', async (req, res) => {
     res.redirect(entry.redirectURL);
 });
 
+app.get('/test', (req, res) => {
+    res.send('Route is Working');
+});
+
 app.listen(9000, console.log('Server is Running on PORT 9000'));
