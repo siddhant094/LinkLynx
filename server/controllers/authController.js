@@ -21,7 +21,7 @@ const loginUser = async (req, res) => {
             jwt.sign(
                 { email: user.email, id: user._id, name: user.name },
                 process.env.JWT_SECRET,
-                {},
+                { expiresIn: '1h' },
                 (err, token) => {
                     if (err) throw err;
                     res.cookie('token', token).json(user);
@@ -61,15 +61,15 @@ const registerUser = async (req, res) => {
     }
 };
 
-const getProfile = (req, res) => {
-    const { token } = req.cookies;
+const getProfile = async (req, res) => {
+    const { token } = await req.cookies;
     if (token) {
         jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
             if (err) throw err;
             res.json(user);
         });
     } else {
-        res.json(null);
+        res.json({ msg: 'error in profile route', token: token });
     }
 };
 
